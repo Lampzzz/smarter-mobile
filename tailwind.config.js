@@ -11,6 +11,9 @@ module.exports = {
           800: "#202E42",
         },
         "white-blue": "#FAFCFF",
+        blue: {
+          50: "#EFF6FF",
+        },
       },
       fontFamily: {
         athin: ["AlbertSans-Thin", "sans-serif"],
