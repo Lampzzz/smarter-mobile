@@ -1,4 +1,4 @@
-import { Text, Pressable, StyleSheet } from "react-native";
+import { Text, Pressable } from "react-native";
 
 const PrimaryButton = ({ label, otherstyles, handleClick }) => {
   return (

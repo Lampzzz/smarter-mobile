@@ -1,18 +1,18 @@
 import { Pressable, Text, View } from "react-native";
-import { router } from "expo-router";
 import { useState } from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
-
-import PrimaryButton from "../../components/PrimaryButton";
-import AuthTitle from "../../components/Text/AuthTitle";
-import AuthInfo from "../../components/Text/AuthInfo";
+import AuthContainer from "@components/Others/AuthContainer";
+import NextContainer from "@components/Others/NextContainer";
+import AuthTitleContainer from "@components/Others/AuthTitleContainer";
+import ProgressContainer from "@components/Others/ProgressContainer";
+import AuthTitle from "@components/Text/AuthTitle";
 
 const GenderForm = () => {
   const [gender, setGender] = useState("");
 
   return (
-    <SafeAreaView className="justify-between items-center h-full bg-white">
-      <View className="px-3 flex-1">
+    <AuthContainer>
+      <ProgressContainer highlightCount={2} />
+      <AuthTitleContainer className="px-3 flex-1">
         <AuthTitle
           maintitle="What sex should we use to calculate your recommendations?"
           subtitle="Based on the body type we will better calculate your hydration needs."
@@ -42,17 +42,10 @@ const GenderForm = () => {
             </View>
           </Pressable>
         </View>
-      </View>
+      </AuthTitleContainer>
 
-      <View className="w-full space-y-3 shadow-sm border border-white-blue p-6">
-        <AuthInfo />
-        <PrimaryButton
-          label="Next"
-          otherstyles="mb-3"
-          handleClick={() => router.push("/nameform")}
-        />
-      </View>
-    </SafeAreaView>
+      <NextContainer path="birthform" />
+    </AuthContainer>
   );
 };
 

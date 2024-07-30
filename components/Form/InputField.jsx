@@ -8,7 +8,7 @@ const InputField = ({ otherStyles, label }) => {
     <View className={`space-y-2 ${otherStyles}`}>
       <Text className="text-sm text-gray-800 font-amedium">{label}</Text>
       <View
-        className={`w-full h-13 border items-center flex-row rounded-lg p-3 ${
+        className={`w-full h-12 border items-center flex-row rounded-lg p-3 ${
           focus ? "border-gray-800" : "border-gray-200"
         }`}
       >

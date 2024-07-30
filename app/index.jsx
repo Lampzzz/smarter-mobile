@@ -1,14 +1,17 @@
-import { View, Text } from "react-native";
+import { View, Text, Image } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
-import PrimaryButton from "../components/PrimaryButton";
-import OutlinedButton from "../components/OutlinedButton";
 import { router } from "expo-router";
+import PrimaryButton from "@components/Button/PrimaryButton";
+import OutlinedButton from "@components/Button/OutlinedButton";
 
-const index = () => {
+const App = () => {
   return (
     <SafeAreaView className="h-full justify-between items-center">
       <View className="flex-1 px-6 justify-center">
+        <View className="mx-auto mb-6">
+          <Image source={require("assets/images/blue_logo.png")} />
+        </View>
         <Text className="font-abold text-2xl text-gray-800 mb-2 text-center">
           Assist with Aquassist
         </Text>
@@ -18,7 +21,7 @@ const index = () => {
         </Text>
       </View>
 
-      <View className="w-full space-y-3 shadow-sm border border-white-blue p-6">
+      <View className="w-full space-y-3 shadow-sm p-6">
         <PrimaryButton
           label="Get started for free"
           otherstyles="mb-3"
@@ -32,4 +35,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default App;

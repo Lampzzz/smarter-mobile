@@ -17,8 +17,26 @@ const AuthLayout = () => {
             headerShown: false,
           }}
         />
+        <Stack.Screen
+          name="birthform"
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="weightform"
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="activityform"
+          options={{
+            headerShown: false,
+          }}
+        />
       </Stack>
-      <StatusBar style="light" backgroundColor="#161622" />
+      <StatusBar style="auto" />
     </>
   );
 };

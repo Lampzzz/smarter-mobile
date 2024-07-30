@@ -34,7 +34,7 @@ const RootLayout = () => {
         name="(auth)"
         options={{
           animation: "none",
-          headerTitle: "",
+          headerShown: false,
         }}
       />
     </Stack>
