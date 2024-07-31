@@ -6,14 +6,14 @@ const HighlightedBoxes = ({ highlightCount }) => {
     return (
       <View
         key={index}
-        className={`w-6 h-2 rounded-full flex-1 ${
+        className={`flex-1 rounded-full h-2 ${
           isHighlighted ? "bg-primary" : "bg-blue-50"
         }`}
       />
     );
   });
 
-  return <View className="space-x-1 flex-row">{boxes}</View>;
+  return <View className="space-x-1 flex-row px-5">{boxes}</View>;
 };
 
 export default HighlightedBoxes;

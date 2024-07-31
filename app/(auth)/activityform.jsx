@@ -4,21 +4,21 @@ import NextContainer from "@components/Others/NextContainer";
 import AuthTitleContainer from "@components/Others/AuthTitleContainer";
 import AuthTitle from "@components/Text/AuthTitle";
 
-const BirthForm = () => {
+const ActivityForm = () => {
   return (
     <AuthContainer>
-      <ProgressContainer highlightCount={4} />
+      <ProgressContainer highlightCount={5} />
 
       <AuthTitleContainer>
         <AuthTitle
-          maintitle="What's your current weight?"
-          subtitle="Weight has a big impact on calculating your daily water goal."
+          maintitle="What is your typical activity level?"
+          subtitle="When burning calories, your body needs more fluid to stay hydrated."
         />
       </AuthTitleContainer>
 
-      <NextContainer path="activityform" />
+      <NextContainer path="" />
     </AuthContainer>
   );
 };
 
-export default BirthForm;
+export default ActivityForm;

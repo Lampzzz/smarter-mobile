@@ -4,7 +4,7 @@ import { router } from "expo-router";
 
 const ProgressContainer = ({ highlightCount }) => {
   return (
-    <View className="flex-row items-center justify-between space-x-5 mb-6 px-6">
+    <View className="flex-row items-center justify-between my-6 px-3">
       <Pressable onPress={() => router.back()}>
         <Image source={require("assets/images/Back.png")} />
       </Pressable>

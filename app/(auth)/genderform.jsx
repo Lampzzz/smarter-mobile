@@ -18,27 +18,23 @@ const GenderForm = () => {
           subtitle="Based on the body type we will better calculate your hydration needs."
         />
 
-        <View className="justify-between items-center space-x-3 flex-row">
-          <Pressable className="flex-1" onPress={() => setGender("male")}>
+        <View className="justify-between items-center space-y-3">
+          <Pressable className="w-full" onPress={() => setGender("male")}>
             <View
-              className={`rounded-lg py-3 ${
-                gender === "male"
-                  ? "border-2 border-primary"
-                  : "border border-gray-200"
+              className={`rounded-lg py-3 border-2 ${
+                gender === "male" ? " border-primary" : " border-gray-200"
               }`}
             >
-              <Text className="text-center">Male</Text>
+              <Text className="text-center font-asemibold">Male</Text>
             </View>
           </Pressable>
-          <Pressable className="flex-1" onPress={() => setGender("female")}>
+          <Pressable className="w-full" onPress={() => setGender("female")}>
             <View
-              className={`rounded-lg py-3 ${
-                gender === "female"
-                  ? "border-2 border-primary"
-                  : "border border-gray-200"
+              className={`rounded-lg py-3 border-2 ${
+                gender === "female" ? " border-primary" : "border-gray-200"
               }`}
             >
-              <Text className="text-center">Female</Text>
+              <Text className="text-center font-asemibold">Female</Text>
             </View>
           </Pressable>
         </View>

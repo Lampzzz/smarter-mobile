@@ -10,7 +10,10 @@ const BirthForm = () => {
       <ProgressContainer highlightCount={3} />
 
       <AuthTitleContainer>
-        <AuthTitle maintitle="What's your date of birth?" />
+        <AuthTitle
+          maintitle="What's your date of birth?"
+          subtitle="Birthday are nature's nudge to drink more water, and we just to greet you!"
+        />
       </AuthTitleContainer>
 
       <NextContainer path="weightform" />

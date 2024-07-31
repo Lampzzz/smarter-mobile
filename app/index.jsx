@@ -1,4 +1,4 @@
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import { router } from "expo-router";
@@ -7,7 +7,7 @@ import OutlinedButton from "@components/Button/OutlinedButton";
 
 const App = () => {
   return (
-    <SafeAreaView className="h-full justify-between items-center">
+    <SafeAreaView className="h-full justify-between items-center bg-white">
       <View className="flex-1 px-6 justify-center">
         <View className="mx-auto mb-6">
           <Image source={require("assets/images/blue_logo.png")} />
@@ -21,18 +21,26 @@ const App = () => {
         </Text>
       </View>
 
-      <View className="w-full space-y-3 shadow-sm p-6">
-        <PrimaryButton
-          label="Get started for free"
-          otherstyles="mb-3"
-          handleClick={() => router.push("/nameform")}
-        />
-        <OutlinedButton label="I have an account" />
+      <View className="w-full rounded-3xl bg-white" style={styles.boxShadow}>
+        <View className="space-y-3 p-6">
+          <PrimaryButton
+            label="Get started for free"
+            otherstyles="mb-3"
+            handleClick={() => router.push("/nameform")}
+          />
+          <OutlinedButton label="I have an account" />
+        </View>
       </View>
 
       <StatusBar style="auto" />
     </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  boxShadow: {
+    elevation: 10,
+  },
+});
 
 export default App;

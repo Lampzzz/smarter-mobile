@@ -2,7 +2,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 const AuthContainer = ({ children }) => {
   return (
-    <SafeAreaView className="justify-between items-center py-5 h-full bg-white">
+    <SafeAreaView className="justify-between h-full bg-white">
       {children}
     </SafeAreaView>
   );
