@@ -1,6 +1,7 @@
-import icons from "@constants/icons";
 import { useState } from "react";
 import { View, Text, TextInput, Image, Pressable } from "react-native";
+
+import { icons } from "@/constants/index";
 
 const TextField = ({ otherStyles, label }) => {
   const [focus, setFocus] = useState(false);

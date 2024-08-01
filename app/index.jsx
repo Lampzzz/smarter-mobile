@@ -3,9 +3,9 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import { router } from "expo-router";
 
-import PrimaryButton from "@/components/Button/PrimaryButton";
-import OutlinedButton from "@/components/Button/OutlinedButton";
-import { images } from "@/constants/index";
+import PrimaryButton from "@/components/button/PrimaryButton";
+import OutlinedButton from "@/components/button/OutlinedButton";
+import { images } from "@/constants";
 
 const App = () => {
   return (
@@ -23,12 +23,12 @@ const App = () => {
         </Text>
       </View>
 
-      <View className="w-full rounded-3xl bg-white" style={styles.boxShadow}>
+      <View className="w-full rounded-t-3xl bg-white" style={styles.boxShadow}>
         <View className="space-y-3 p-6">
           <PrimaryButton
             label="Get started for free"
             otherstyles="mb-3"
-            handleClick={() => router.push("/nameform")}
+            handleClick={() => router.push("/nickname")}
           />
           <OutlinedButton label="I have an account" />
         </View>

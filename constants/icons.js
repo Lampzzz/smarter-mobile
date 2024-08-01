@@ -1,12 +1,12 @@
-import cross from "@assets/images/cross.png";
-import male from "@assets/images/male_icon.png";
-import female from "@assets/images/female_icon.png";
-import eyehide from "@assets/images/eye_hide.png";
-import eyeshow from "@assets/images/eye_unhide.png";
-import back from "@assets/images/back.png";
-import lightActivity from "@assets/images/light_activity.png";
-import moderatelyActive from "@assets/images/moderately_active.png";
-import sedentary from "@assets/images/sedentary.png";
+import cross from "@/assets/icons/cross.png";
+import male from "@/assets/icons/male.png";
+import female from "@/assets/icons/female.png";
+import eyehide from "@/assets/icons/eyehide.png";
+import eyeshow from "@/assets/icons/eyeshow.png";
+import prev from "@/assets/icons/prev.png";
+import lightActivity from "@/assets/icons/light_activity.png";
+import moderatelyActive from "@/assets/icons/moderately_active.png";
+import sedentary from "@/assets/icons/sedentary.png";
 
 export default {
   cross,
@@ -14,7 +14,7 @@ export default {
   female,
   eyehide,
   eyeshow,
-  back,
+  prev,
   lightActivity,
   moderatelyActive,
   sedentary,

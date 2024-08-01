@@ -1,8 +1,8 @@
 import { StyleSheet, View } from "react-native";
-import React from "react";
-import AuthInfo from "@components/Text/AuthInfo";
-import PrimaryButton from "@components/Button/PrimaryButton";
 import { router } from "expo-router";
+
+import AuthInfo from "@/components/text/AuthInfo";
+import PrimaryButton from "@/components/button/PrimaryButton";
 
 const NextContainer = ({ label = "Next", path }) => {
   return (

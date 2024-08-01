@@ -1,14 +1,17 @@
 import { ScrollView } from "react-native";
+import { useState } from "react";
 
 import AuthContainer from "@/components/others/AuthContainer";
 import ProgressContainer from "@/components/others/ProgressContainer";
 import NextContainer from "@/components/others/NextContainer";
 import AuthTitleContainer from "@/components/others/AuthTitleContainer";
 import AuthTitle from "@/components/text/AuthTitle";
-import icons from "@/constants/icons";
+import { icons } from "@/constants";
 import ActivityOption from "@/components/form/ActivityOption";
 
 const ActivityLevel = () => {
+  const [selectedActLvl, setSelectedActLvl] = useState(null);
+
   const activities = [
     {
       id: 1,
@@ -46,6 +49,9 @@ const ActivityLevel = () => {
           {activities.map((activity) => (
             <ActivityOption
               key={activity.id}
+              selected={selectedActLvl}
+              setSelected={setSelectedActLvl}
+              id={activity.id}
               title={activity.title}
               icons={activity.icons}
               description={activity.description}
