@@ -2,10 +2,10 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@app/*": ["./app/*"],
-      "@assets/*": ["./assets/*"],
-      "@components/*": ["./components/*"],
-      "@constants/*": ["./constants/*"]
+      "@/app/*": ["./app/*"],
+      "@/assets/*": ["./assets/*"],
+      "@/components/*": ["./components/*"],
+      "@/constants/*": ["./constants/*"]
     }
   }
 }
