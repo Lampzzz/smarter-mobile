@@ -6,31 +6,31 @@ const AuthLayout = () => {
     <>
       <Stack screenOptions={{ animation: "none" }}>
         <Stack.Screen
-          name="nameform"
+          name="nickname"
           options={{
             headerShown: false,
           }}
         />
         <Stack.Screen
-          name="genderform"
+          name="gender"
           options={{
             headerShown: false,
           }}
         />
         <Stack.Screen
-          name="birthform"
+          name="birthdate"
           options={{
             headerShown: false,
           }}
         />
         <Stack.Screen
-          name="weightform"
+          name="weight"
           options={{
             headerShown: false,
           }}
         />
         <Stack.Screen
-          name="activityform"
+          name="activitylevel"
           options={{
             headerShown: false,
           }}

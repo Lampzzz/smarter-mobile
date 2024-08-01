@@ -2,15 +2,17 @@ import { View, Text, Image, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import { router } from "expo-router";
-import PrimaryButton from "@components/Button/PrimaryButton";
-import OutlinedButton from "@components/Button/OutlinedButton";
+
+import PrimaryButton from "@/components/Button/PrimaryButton";
+import OutlinedButton from "@/components/Button/OutlinedButton";
+import { images } from "@/constants/index";
 
 const App = () => {
   return (
     <SafeAreaView className="h-full justify-between items-center bg-white">
       <View className="flex-1 px-6 justify-center">
         <View className="mx-auto mb-6">
-          <Image source={require("assets/images/blue_logo.png")} />
+          <Image source={images.blueLogo} />
         </View>
         <Text className="font-abold text-2xl text-gray-800 mb-2 text-center">
           Assist with Aquassist

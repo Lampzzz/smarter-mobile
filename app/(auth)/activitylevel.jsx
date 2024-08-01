@@ -1,14 +1,15 @@
-import AuthContainer from "@components/Others/AuthContainer";
-import ProgressContainer from "@components/Others/ProgressContainer";
-import NextContainer from "@components/Others/NextContainer";
-import AuthTitleContainer from "@components/Others/AuthTitleContainer";
-import AuthTitle from "@components/Text/AuthTitle";
 import { ScrollView } from "react-native";
-import icons from "@constants/icons";
-import ActivityOption from "@components/Form/ActivityOption";
 
-const ActivityForm = () => {
-  const activitylvl = [
+import AuthContainer from "@/components/others/AuthContainer";
+import ProgressContainer from "@/components/others/ProgressContainer";
+import NextContainer from "@/components/others/NextContainer";
+import AuthTitleContainer from "@/components/others/AuthTitleContainer";
+import AuthTitle from "@/components/text/AuthTitle";
+import icons from "@/constants/icons";
+import ActivityOption from "@/components/form/ActivityOption";
+
+const ActivityLevel = () => {
+  const activities = [
     {
       id: 1,
       title: "Sedentary",
@@ -41,13 +42,8 @@ const ActivityForm = () => {
           subtitle="When burning calories, your body needs more fluid to stay hydrated."
         />
 
-        <ScrollView
-          showsVerticalScrollIndicator={false}
-          bounces={false}
-          ani
-          className="pb-5"
-        >
-          {activitylvl.map((activity) => (
+        <ScrollView showsVerticalScrollIndicator={false} className="pb-5">
+          {activities.map((activity) => (
             <ActivityOption
               key={activity.id}
               title={activity.title}
@@ -63,4 +59,4 @@ const ActivityForm = () => {
   );
 };
 
-export default ActivityForm;
+export default ActivityLevel;

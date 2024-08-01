@@ -1,14 +1,16 @@
 import { View } from "react-native";
 import { useState } from "react";
-import AuthContainer from "@components/Others/AuthContainer";
-import NextContainer from "@components/Others/NextContainer";
-import AuthTitleContainer from "@components/Others/AuthTitleContainer";
-import ProgressContainer from "@components/Others/ProgressContainer";
-import AuthTitle from "@components/Text/AuthTitle";
-import GenderOption from "@components/Form/GenderOption";
 
-const GenderForm = () => {
+import AuthContainer from "@/components/others/AuthContainer";
+import NextContainer from "@/components/others/NextContainer";
+import AuthTitleContainer from "@/components/others/AuthTitleContainer";
+import ProgressContainer from "@/components/others/ProgressContainer";
+import AuthTitle from "@/components/text/AuthTitle";
+import GenderOption from "@/components/form/GenderOption";
+
+const Gender = () => {
   const [selectedGender, setSelectedGender] = useState("");
+  const genderList = ["Male", "Female", "Prefer not to say"];
 
   return (
     <AuthContainer>
@@ -20,7 +22,7 @@ const GenderForm = () => {
         />
 
         <View className="justify-between items-center">
-          {["Male", "Female", "Prefer not to say"].map((gender) => (
+          {genderList.map((gender) => (
             <GenderOption
               key={gender}
               gender={gender}
@@ -31,9 +33,9 @@ const GenderForm = () => {
         </View>
       </AuthTitleContainer>
 
-      <NextContainer path="birthform" />
+      <NextContainer path="birthdate" />
     </AuthContainer>
   );
 };
 
-export default GenderForm;
+export default Gender;
