@@ -3,7 +3,7 @@ import React from "react";
 
 const AuthInfo = () => {
   return (
-    <Text className="text-sm font-aregular text-gray-800 text-center mb-3 px-5">
+    <Text className="text-xs font-aregular text-gray-800 text-center mb-3 px-5">
       We use information to calculate and provide you daily personalized
       recommendations.
     </Text>

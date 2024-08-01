@@ -6,7 +6,7 @@ const ProgressContainer = ({ highlightCount }) => {
   return (
     <View className="flex-row items-center justify-between my-6 px-3">
       <Pressable onPress={() => router.back()}>
-        <Image source={require("assets/images/Back.png")} />
+        <Image source={require("assets/images/back.png")} />
       </Pressable>
       <View className="space-x-1 flex-row">
         <ProgressAuth highlightCount={highlightCount} />

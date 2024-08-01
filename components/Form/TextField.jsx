@@ -1,8 +1,10 @@
+import icons from "@constants/icons";
 import { useState } from "react";
-import { View, Text, TextInput } from "react-native";
+import { View, Text, TextInput, Image, Pressable } from "react-native";
 
-const InputField = ({ otherStyles, label }) => {
+const TextField = ({ otherStyles, label }) => {
   const [focus, setFocus] = useState(false);
+  const [nickname, setNickname] = useState("");
 
   return (
     <View className={`space-y-2 ${otherStyles}`}>
@@ -16,10 +18,17 @@ const InputField = ({ otherStyles, label }) => {
           className="flex-1 text-gray-800 font-psemibold text-sm"
           onFocus={() => setFocus(true)}
           onBlur={() => setFocus(false)}
+          value={nickname}
+          onChangeText={(e) => setNickname(e)}
         />
+        {nickname.length > 0 && (
+          <Pressable onPress={() => setNickname("")}>
+            <Image source={icons.cross} className="h-5 w-5" />
+          </Pressable>
+        )}
       </View>
     </View>
   );
 };
 
-export default InputField;
+export default TextField;
