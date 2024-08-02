@@ -6,6 +6,30 @@ const AuthLayout = () => {
     <>
       <Stack screenOptions={{ animation: "none" }}>
         <Stack.Screen
+          name="choose"
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="email"
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="verify"
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="password"
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
           name="nickname"
           options={{
             headerShown: false,

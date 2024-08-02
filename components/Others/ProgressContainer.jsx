@@ -11,7 +11,7 @@ const ProgressContainer = ({ highlightCount }) => {
         <Image source={icons.prev} />
       </Pressable>
       <View className="space-x-1 flex-row">
-        <ProgressAuth highlightCount={highlightCount} />
+        {highlightCount > 0 && <ProgressAuth highlightCount={highlightCount} />}
       </View>
     </View>
   );

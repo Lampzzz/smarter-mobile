@@ -26,9 +26,9 @@ const App = () => {
       <View className="w-full rounded-t-3xl bg-white" style={styles.boxShadow}>
         <View className="space-y-3 p-6">
           <PrimaryButton
-            label="Get started for free"
+            label="Get started"
             otherstyles="mb-3"
-            handleClick={() => router.push("/nickname")}
+            handleClick={() => router.push("/choose")}
           />
           <OutlinedButton label="I have an account" />
         </View>
