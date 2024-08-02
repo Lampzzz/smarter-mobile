@@ -10,7 +10,10 @@ const Email = () => {
     <AuthContainer>
       <ProgressContainer />
       <AuthTitleContainer>
-        <AuthTitle maintitle="Create your account" />
+        <AuthTitle
+          maintitle="Create your account"
+          subtitle="Hi! Ready to dive in? Give us your email to begin!"
+        />
         <TextField label="Email" />
       </AuthTitleContainer>
       <NextContainer path="verify" about="agreement" label="Verify with OTP" />

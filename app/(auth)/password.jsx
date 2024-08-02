@@ -10,11 +10,14 @@ const Password = () => {
     <AuthContainer>
       <ProgressContainer />
       <AuthTitleContainer>
-        <AuthTitle maintitle="Create a secure password" />
+        <AuthTitle
+          maintitle="Set a secure password"
+          subtitle="Choose a password to keep your account safe and sound."
+        />
         <TextField label="Password" otherStyles="mb-5" />
         <TextField label="Confirm Password" />
       </AuthTitleContainer>
-      <NextContainer path="" about="agreement" />
+      <NextContainer path="userinfo" about="agreement" />
     </AuthContainer>
   );
 };
