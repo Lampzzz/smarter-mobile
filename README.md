@@ -18,16 +18,13 @@ The mobile application is designed for clients, providing them with essential to
    ```bash
    cd apps/mobile
 
-2. Install packages:
+2. Install the required packages:
    ```bash
    npm install
 
-2. For the first time run use:
-   ```bash
-   npx expo start -c
-
-then and so on
+2. Start the application
    ```bash
    npm run start
+
 
 
