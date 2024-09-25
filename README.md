@@ -15,14 +15,17 @@ To get started with this project, you'll need to install the necessary packages 
 The mobile application is designed for clients, providing them with essential tools and information for safe and efficient evacuation.
 
 1. Navigate to the mobile application directory:
+   
    ```bash
    cd apps/mobile
 
-2. Install the required packages:
+3. Install the required packages:
+   
    ```bash
    npm install
 
-2. Start the application
+5. Start the application:
+   
    ```bash
    npm run start
 
