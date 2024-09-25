@@ -27,4 +27,3 @@ The mobile application is designed for clients, providing them with essential to
    npm run start
 
 
-
