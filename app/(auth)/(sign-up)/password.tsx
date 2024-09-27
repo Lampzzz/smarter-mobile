@@ -8,6 +8,7 @@ import ContentHeader from "@/components/ui/ContentHeader";
 import FormField from "@/components/ui/FormField";
 import TermsAndPrivacy from "@/components/ui/TermsAndPrivacy";
 import Button from "@/components/ui/Button";
+import { useUserFormStore } from "@/store/userStore";
 
 interface FormValues {
   password: string;
@@ -15,16 +16,19 @@ interface FormValues {
 }
 
 const Password = () => {
+  const { setUser } = useUserFormStore();
+
   const {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm({ defaultValues: { password: "", confirmPassword: "" } });
+  } = useForm({
+    defaultValues: { password: "123456", confirmPassword: "123456" },
+  });
 
   const onSubmit = (data: FormValues) => {
-    console.log(data);
-
     if (!data) return;
+    setUser({ password: data.password });
 
     router.push("/fullname");
   };
@@ -52,7 +56,7 @@ const Password = () => {
                 value={value}
                 onChangeText={onChange}
                 error={errors.password?.message}
-                otherStyles="mb-3"
+                otherStyles="mb-4"
               />
             )}
           />

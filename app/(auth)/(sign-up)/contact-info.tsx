@@ -8,18 +8,19 @@ import ContentHeader from "@/components/ui/ContentHeader";
 import FormField from "@/components/ui/FormField";
 import TermsAndPrivacy from "@/components/ui/TermsAndPrivacy";
 import Button from "@/components/ui/Button";
+import { useUserFormStore } from "@/store/userStore";
 
 const ContactInfo = () => {
+  const { setUser } = useUserFormStore();
   const {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm({ defaultValues: { contactInfo: "" } });
+  } = useForm({ defaultValues: { contactInfo: "lampazaj@gmail.com" } });
 
   const onSubmit = (data: { contactInfo: string }) => {
-    console.log(data);
-
     if (!data) return;
+    setUser({ contactInfo: data.contactInfo });
 
     router.push("/verification-code");
   };

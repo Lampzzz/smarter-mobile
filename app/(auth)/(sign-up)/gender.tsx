@@ -1,6 +1,6 @@
-import { useForm, Controller } from "react-hook-form";
-import { useState } from "react";
+import clsx from "clsx";
 import { router } from "expo-router";
+import { useForm, Controller } from "react-hook-form";
 import { View, TouchableOpacity, Text } from "react-native";
 
 import Container from "@/components/ui/Container";
@@ -8,10 +8,10 @@ import HeaderBack from "@/components/ui/HeaderBack";
 import ContentHeader from "@/components/ui/ContentHeader";
 import TermsAndPrivacy from "@/components/ui/TermsAndPrivacy";
 import Button from "@/components/ui/Button";
-import clsx from "clsx";
+import { useUserFormStore } from "@/store/userStore";
 
 const Gender = () => {
-  const [gender, setGender] = useState("");
+  const { setUser } = useUserFormStore();
   const options = ["Man", "Woman", "Other"];
 
   const {
@@ -21,9 +21,8 @@ const Gender = () => {
   } = useForm({ defaultValues: { gender: "Man" } });
 
   const onSubmit = (data: { gender: string }) => {
-    console.log(data);
-
     if (!data) return;
+    setUser({ gender: data.gender });
 
     router.push("/photo");
   };

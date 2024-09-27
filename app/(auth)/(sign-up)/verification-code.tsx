@@ -14,11 +14,9 @@ const VerificationCode = () => {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm({ defaultValues: { verificationCode: "" } });
+  } = useForm({ defaultValues: { verificationCode: "123456" } });
 
   const onSubmit = (data: { verificationCode: string }) => {
-    console.log(data);
-
     if (!data) return;
 
     router.push("/password");

@@ -11,6 +11,8 @@ interface FormFieldProps {
   value?: string;
   onChangeText?: (text: string) => void;
   error?: string;
+  onPressIcon?: () => void;
+  isEditable?: boolean;
 }
 
 const FormField = ({
@@ -20,6 +22,8 @@ const FormField = ({
   value,
   onChangeText,
   error,
+  onPressIcon,
+  isEditable = true,
 }: FormFieldProps) => {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -39,21 +43,22 @@ const FormField = ({
             className="flex-1"
             value={value}
             onChangeText={onChangeText}
+            editable={isEditable}
           />
           {label.includes("Password") && (
             <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
               <Image
                 source={!showPassword ? icons.eye : icons.eyeSlash}
-                className="w-5 h-5"
+                className="w-5 h-5 opacity-60"
                 tintColor="#696969"
               />
             </TouchableOpacity>
           )}
           {label === "Birthdate" && (
-            <TouchableOpacity onPress={() => {}}>
+            <TouchableOpacity onPress={onPressIcon}>
               <Image
                 source={icons.calendar}
-                className="w-5 h-5"
+                className="w-5 h-5 opacity-60"
                 tintColor="#696969"
               />
             </TouchableOpacity>

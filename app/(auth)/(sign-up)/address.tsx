@@ -8,18 +8,20 @@ import ContentHeader from "@/components/ui/ContentHeader";
 import FormField from "@/components/ui/FormField";
 import TermsAndPrivacy from "@/components/ui/TermsAndPrivacy";
 import Button from "@/components/ui/Button";
+import { useUserFormStore } from "@/store/userStore";
 
 const Address = () => {
+  const { setUser } = useUserFormStore();
+
   const {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm({ defaultValues: { address: "" } });
+  } = useForm({ defaultValues: { address: "Caloocan City" } });
 
   const onSubmit = (data: { address: string }) => {
-    console.log(data);
-
     if (!data) return;
+    setUser({ address: data.address });
 
     router.push("/gender");
   };

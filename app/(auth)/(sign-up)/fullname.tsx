@@ -8,6 +8,7 @@ import ContentHeader from "@/components/ui/ContentHeader";
 import FormField from "@/components/ui/FormField";
 import TermsAndPrivacy from "@/components/ui/TermsAndPrivacy";
 import Button from "@/components/ui/Button";
+import { useUserFormStore } from "@/store/userStore";
 
 interface FormValues {
   firstName: string;
@@ -16,18 +17,27 @@ interface FormValues {
 }
 
 const FullName = () => {
+  const { setUser } = useUserFormStore();
+
   const {
     control,
     handleSubmit,
     formState: { errors },
   } = useForm({
-    defaultValues: { firstName: "", middleName: "", lastName: "" },
+    defaultValues: {
+      firstName: "James",
+      middleName: "Omagac",
+      lastName: "Lampaza",
+    },
   });
 
   const onSubmit = (data: FormValues) => {
-    console.log(data);
-
     if (!data) return;
+    setUser({
+      firstName: data.firstName,
+      middleName: data.middleName,
+      lastName: data.lastName,
+    });
 
     router.push("/birthdate");
   };
@@ -54,7 +64,7 @@ const FullName = () => {
                 value={value}
                 onChangeText={onChange}
                 error={errors.firstName?.message}
-                otherStyles="mb-3"
+                otherStyles="mb-4"
               />
             )}
           />
@@ -69,7 +79,7 @@ const FullName = () => {
                 value={value}
                 onChangeText={onChange}
                 error={errors.middleName?.message}
-                otherStyles="mb-3"
+                otherStyles="mb-4"
               />
             )}
           />

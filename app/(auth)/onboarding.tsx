@@ -1,4 +1,4 @@
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Text, Image, TouchableOpacity, Pressable } from "react-native";
 import { router } from "expo-router";
 
 import Container from "@/components/ui/Container";
@@ -23,14 +23,19 @@ const onboarding = () => {
             secure connectivity in emergencies
           </Text>
         </View>
-        <View className="gap-y-3 items-center">
+        <View className="gap-y-4 items-center">
           <Button
             label="Get Started"
             handlePress={() => router.push("/contact-info")}
           />
           <Text className="text-gray text-center">
             Already have an account?{" "}
-            <Text className="text-primary font-bold">Log In</Text>
+            <Text
+              className="text-primary font-bold"
+              onPress={() => router.push("/sign-in")}
+            >
+              Log In
+            </Text>
           </Text>
         </View>
       </View>

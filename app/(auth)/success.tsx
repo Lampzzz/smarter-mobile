@@ -1,11 +1,20 @@
-import { View, Text } from "react-native";
 import LottieView from "lottie-react-native";
+import { useEffect } from "react";
+import { View, Text } from "react-native";
 
 import Container from "@/components/ui/Container";
 import { icons } from "@/constant";
-import ContentHeader from "@/components/ui/ContentHeader";
+import { router } from "expo-router";
 
 const Success = () => {
+  useEffect(() => {
+    const redirect = setTimeout(() => {
+      router.push("/(tabs)/home");
+    }, 2000);
+
+    return () => clearTimeout(redirect);
+  }, []);
+
   return (
     <Container>
       <View className="flex-1 justify-center items-center">

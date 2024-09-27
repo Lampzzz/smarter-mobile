@@ -1,22 +1,39 @@
 import { create } from "zustand";
 
 interface User {
-  email: string;
-  contactNumber: number;
+  contactInfo: string;
+  password: string;
   firstName: string;
   lastName: string;
   middleName: string;
   birthdate: string;
+  address: string;
+  gender: string;
 }
 
-export const useStore = create((set) => ({
+interface UserStore {
+  user: User;
+  setUser: (data: Partial<User>) => void;
+}
+
+export const useUserFormStore = create<UserStore>((set) => ({
   user: {
     contactInfo: "",
+    password: "",
     firstName: "",
     lastName: "",
     middleName: "",
     birthdate: "",
+    address: "",
+    gender: "",
   },
 
-  setUser: (user: User) => set({ user }),
+  setUser: (data: Partial<User>) => {
+    set((state) => ({
+      user: {
+        ...state.user,
+        ...data,
+      },
+    }));
+  },
 }));
