@@ -1,6 +1,6 @@
 import { useForm, Controller } from "react-hook-form";
 import { router } from "expo-router";
-import { View } from "react-native";
+import { ScrollView, View } from "react-native";
 
 import Container from "@/components/ui/Container";
 import HeaderBack from "@/components/ui/HeaderBack";
@@ -25,9 +25,9 @@ const FullName = () => {
     formState: { errors },
   } = useForm({
     defaultValues: {
-      firstName: "James",
-      middleName: "Omagac",
-      lastName: "Lampaza",
+      firstName: "John",
+      middleName: "",
+      lastName: "Doe",
     },
   });
 
@@ -45,62 +45,68 @@ const FullName = () => {
   return (
     <Container>
       <View className="flex-1 justify-between">
-        <View className="flex-1 justify-start">
-          <HeaderBack />
-          <ContentHeader
-            title="What's Your Full Name?"
-            subtitle="Please provide your full name to personalize your experience"
-          />
-          <Controller
-            control={control}
-            name="firstName"
-            rules={{
-              required: "First name is required",
-            }}
-            render={({ field: { onChange, value } }) => (
-              <FormField
-                label="First Name"
-                placeholder="Enter your first name"
-                value={value}
-                onChangeText={onChange}
-                error={errors.firstName?.message}
-                otherStyles="mb-4"
-              />
-            )}
-          />
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          overScrollMode="never"
+          contentContainerStyle={{ paddingBottom: 20 }}
+        >
+          <View className="flex-1 justify-start">
+            <HeaderBack />
+            <ContentHeader
+              title="What's Your Full Name?"
+              subtitle="Please provide your full name to personalize your experience"
+            />
+            <Controller
+              control={control}
+              name="firstName"
+              rules={{
+                required: "First name is required",
+              }}
+              render={({ field: { onChange, value } }) => (
+                <FormField
+                  label="First Name"
+                  placeholder="Enter your first name"
+                  value={value}
+                  onChangeText={onChange}
+                  error={errors.firstName?.message}
+                  otherStyles="mb-4"
+                />
+              )}
+            />
 
-          <Controller
-            control={control}
-            name="middleName"
-            render={({ field: { onChange, value } }) => (
-              <FormField
-                label="Middle Name (Optional)"
-                placeholder="Enter your middle name"
-                value={value}
-                onChangeText={onChange}
-                error={errors.middleName?.message}
-                otherStyles="mb-4"
-              />
-            )}
-          />
+            <Controller
+              control={control}
+              name="middleName"
+              render={({ field: { onChange, value } }) => (
+                <FormField
+                  label="Middle Name (Optional)"
+                  placeholder="Enter your middle name"
+                  value={value}
+                  onChangeText={onChange}
+                  error={errors.middleName?.message}
+                  otherStyles="mb-4"
+                />
+              )}
+            />
 
-          <Controller
-            control={control}
-            name="lastName"
-            rules={{
-              required: "Last name is required",
-            }}
-            render={({ field: { onChange, value } }) => (
-              <FormField
-                label="Last Name"
-                placeholder="Enter your last name"
-                value={value}
-                onChangeText={onChange}
-                error={errors.lastName?.message}
-              />
-            )}
-          />
-        </View>
+            <Controller
+              control={control}
+              name="lastName"
+              rules={{
+                required: "Last name is required",
+              }}
+              render={({ field: { onChange, value } }) => (
+                <FormField
+                  label="Last Name"
+                  placeholder="Enter your last name"
+                  value={value}
+                  onChangeText={onChange}
+                  error={errors.lastName?.message}
+                />
+              )}
+            />
+          </View>
+        </ScrollView>
 
         <View className="items-center">
           <TermsAndPrivacy />

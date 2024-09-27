@@ -1,10 +1,19 @@
 import Container from "@/components/ui/Container";
-import { View, Text } from "react-native";
+import { logout } from "@/firebase/auth";
+import { useAuthStore } from "@/store/authStore";
+import { View, Text, TouchableOpacity } from "react-native";
 
 const Home = () => {
+  const { currentUser } = useAuthStore();
+
+  console.log(currentUser);
+
   return (
     <Container>
       <Text>Home</Text>
+      <TouchableOpacity onPress={logout}>
+        <Text>Logout</Text>
+      </TouchableOpacity>
     </Container>
   );
 };

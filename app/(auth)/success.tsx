@@ -10,7 +10,7 @@ const Success = () => {
   useEffect(() => {
     const redirect = setTimeout(() => {
       router.push("/(tabs)/home");
-    }, 2000);
+    }, 3000);
 
     return () => clearTimeout(redirect);
   }, []);

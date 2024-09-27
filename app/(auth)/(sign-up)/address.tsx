@@ -17,7 +17,7 @@ const Address = () => {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm({ defaultValues: { address: "Caloocan City" } });
+  } = useForm({ defaultValues: { address: "Caloocan" } });
 
   const onSubmit = (data: { address: string }) => {
     if (!data) return;

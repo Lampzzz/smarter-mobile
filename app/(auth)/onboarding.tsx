@@ -1,4 +1,4 @@
-import { View, Text, Image, TouchableOpacity, Pressable } from "react-native";
+import { View, Text, Image } from "react-native";
 import { router } from "expo-router";
 
 import Container from "@/components/ui/Container";
@@ -28,7 +28,7 @@ const onboarding = () => {
             label="Get Started"
             handlePress={() => router.push("/contact-info")}
           />
-          <Text className="text-gray text-center">
+          <Text className="text-gray text-center mb-2">
             Already have an account?{" "}
             <Text
               className="text-primary font-bold"

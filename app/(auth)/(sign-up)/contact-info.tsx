@@ -16,7 +16,7 @@ const ContactInfo = () => {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm({ defaultValues: { contactInfo: "lampazaj@gmail.com" } });
+  } = useForm({ defaultValues: { contactInfo: "sao@gmail.com" } });
 
   const onSubmit = (data: { contactInfo: string }) => {
     if (!data) return;

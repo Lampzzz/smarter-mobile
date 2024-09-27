@@ -1,22 +1,18 @@
 import { create } from "zustand";
 
-interface User {
-  contactInfo: string;
-  password: string;
-  firstName: string;
-  lastName: string;
-  middleName: string;
-  birthdate: string;
-  address: string;
-  gender: string;
-}
+import { register } from "@/firebase/auth";
+import { ErrorHandler } from "@/lib/utils";
 
 interface UserStore {
   user: User;
+  loading: boolean;
   setUser: (data: Partial<User>) => void;
+  addUser: () => Promise<void>;
+  setLoading: (loading: boolean) => void;
 }
 
-export const useUserFormStore = create<UserStore>((set) => ({
+export const useUserFormStore = create<UserStore>((set, get) => ({
+  loading: false,
   user: {
     contactInfo: "",
     password: "",
@@ -26,6 +22,11 @@ export const useUserFormStore = create<UserStore>((set) => ({
     birthdate: "",
     address: "",
     gender: "",
+    photo: "",
+  },
+
+  setLoading: (loading: boolean) => {
+    set({ loading });
   },
 
   setUser: (data: Partial<User>) => {
@@ -35,5 +36,18 @@ export const useUserFormStore = create<UserStore>((set) => ({
         ...data,
       },
     }));
+  },
+
+  addUser: async () => {
+    try {
+      get().setLoading(true);
+
+      const { user } = get();
+      await register(user);
+    } catch (error: unknown) {
+      ErrorHandler(error);
+    } finally {
+      get().setLoading(false);
+    }
   },
 }));
