@@ -1,3 +1,4 @@
+import { router } from "expo-router";
 import { addDoc, collection } from "@firebase/firestore";
 import {
   signInWithEmailAndPassword,
@@ -5,10 +6,9 @@ import {
   signOut,
 } from "@firebase/auth";
 
-import { ErrorHandler } from "@/lib/utils";
 import { auth, db } from "./config";
 import { uploadFile } from "./storage";
-import { router } from "expo-router";
+import { User } from "@/types/type";
 
 export const register = async (data: User) => {
   try {
@@ -19,26 +19,26 @@ export const register = async (data: User) => {
     );
 
     const { password, photo, ...userData } = data;
-
     const photoURL = await uploadFile("photo", photo);
 
     await addDoc(collection(db, "users"), {
-      auth_id: userCredential.user.uid,
+      // auth_id: userCredential.user.uid,
       photo: photoURL,
       ...userData,
     });
 
-    await login(data.contactInfo, data.password);
-  } catch (error: unknown) {
-    ErrorHandler(error);
+    // await login(data.contactInfo, data.password);
+  } catch (error: any) {
+    console.error(error);
   }
 };
 
 export const login = async (email: string, password: string) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
+    router.replace("/home");
   } catch (error) {
-    ErrorHandler(error);
+    console.error(error);
   }
 };
 
@@ -47,6 +47,6 @@ export const logout = async () => {
     await signOut(auth);
     router.replace("/sign-in");
   } catch (error) {
-    ErrorHandler(error);
+    console.error(error);
   }
 };

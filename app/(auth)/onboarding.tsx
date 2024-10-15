@@ -1,11 +1,11 @@
-import { View, Text, Image } from "react-native";
 import { router } from "expo-router";
+import { View, Text, Image } from "react-native";
 
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import { images } from "@/constant";
 
-const onboarding = () => {
+const Onboarding = () => {
   return (
     <Container>
       <View className="flex-1 justify-between">
@@ -26,7 +26,7 @@ const onboarding = () => {
         <View className="gap-y-4 items-center">
           <Button
             label="Get Started"
-            handlePress={() => router.push("/contact-info")}
+            handlePress={() => router.push("/home")}
           />
           <Text className="text-gray text-center mb-2">
             Already have an account?{" "}
@@ -43,4 +43,4 @@ const onboarding = () => {
   );
 };
 
-export default onboarding;
+export default Onboarding;

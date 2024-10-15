@@ -4,6 +4,7 @@ import { auth } from "@/firebase/config";
 import { onAuthStateChanged } from "@firebase/auth";
 import { getUserData } from "@/firebase/firestore";
 import { ErrorHandler } from "@/lib/utils";
+import { AuthStore } from "@/types/type";
 
 export const useAuthStore = create<AuthStore>((set, get) => ({
   isAuthenticated: false,
@@ -13,7 +14,7 @@ export const useAuthStore = create<AuthStore>((set, get) => ({
   fetchUserData: async (uid: string) => {
     try {
       const userData = await getUserData(uid);
-      set({ currentUser: userData });
+      // set({ currentUser: userData });
     } catch (error) {
       set({ currentUser: null });
       ErrorHandler(error);

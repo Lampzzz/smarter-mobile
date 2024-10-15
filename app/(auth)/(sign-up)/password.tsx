@@ -93,7 +93,6 @@ const Password = () => {
         </ScrollView>
 
         <View className="items-center">
-          <TermsAndPrivacy />
           <Button label="Next" handlePress={handleSubmit(onSubmit)} />
         </View>
       </View>

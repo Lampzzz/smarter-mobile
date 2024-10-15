@@ -5,6 +5,11 @@ import eye from "@/assets/icons/eye.png";
 import eyeSlash from "@/assets/icons/eye-slash.png";
 import calendar from "@/assets/icons/calendar.png";
 
+import emergency from "@/assets/icons/emergency.svg";
+import home from "@/assets/icons/home.svg";
+import map from "@/assets/icons/map.svg";
+import user from "@/assets/icons/user.svg";
+
 export const images = {
   logo,
 };
@@ -15,4 +20,8 @@ export const icons = {
   eye,
   eyeSlash,
   calendar,
+  emergency,
+  home,
+  map,
+  user,
 };

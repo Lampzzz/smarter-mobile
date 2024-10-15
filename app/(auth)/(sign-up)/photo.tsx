@@ -7,9 +7,9 @@ import { router } from "expo-router";
 import Container from "@/components/ui/Container";
 import HeaderBack from "@/components/ui/HeaderBack";
 import ContentHeader from "@/components/ui/ContentHeader";
-import Button, { OutlineButton } from "@/components/ui/Button";
-import { useUserFormStore } from "@/store/userStore";
 import Loading from "@/components/ui/Loading";
+import { useUserFormStore } from "@/store/userStore";
+import Button, { OutlineButton } from "@/components/ui/Button";
 
 const Photo = () => {
   const { setUser, user, loading, addUser } = useUserFormStore();
@@ -44,7 +44,7 @@ const Photo = () => {
   };
 
   const onSubmit = async () => {
-    await addUser();
+    // await addUser();
     router.push("/success");
   };
 

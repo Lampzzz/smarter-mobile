@@ -9,7 +9,7 @@ import { router } from "expo-router";
 const Success = () => {
   useEffect(() => {
     const redirect = setTimeout(() => {
-      router.push("/(tabs)/home");
+      router.push("/home");
     }, 3000);
 
     return () => clearTimeout(redirect);

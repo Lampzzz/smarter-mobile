@@ -9,9 +9,9 @@ module.exports = {
       "error",
       {
         groups: [
-          "builtin",
           "external",
           "internal",
+          "builtin",
           "parent",
           "sibling",
           "index",

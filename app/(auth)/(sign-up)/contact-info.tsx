@@ -16,12 +16,11 @@ const ContactInfo = () => {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm({ defaultValues: { contactInfo: "sao@gmail.com" } });
+  } = useForm({ defaultValues: { contactInfo: "+63" } });
 
-  const onSubmit = (data: { contactInfo: string }) => {
+  const onSubmit = async (data: { contactInfo: string }) => {
     if (!data) return;
     setUser({ contactInfo: data.contactInfo });
-
     router.push("/verification-code");
   };
 
@@ -39,11 +38,11 @@ const ContactInfo = () => {
             control={control}
             name="contactInfo"
             rules={{
-              required: "Email or Contact Number is required",
+              required: "Contact Number is required",
             }}
             render={({ field: { onChange, value } }) => (
               <FormField
-                label="Email or Contact Number"
+                label="Contact Number"
                 placeholder="Enter your active email or contact number"
                 value={value}
                 onChangeText={onChange}

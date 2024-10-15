@@ -2,13 +2,9 @@ import ReactNativeAsyncStorage from "@react-native-async-storage/async-storage";
 import { initializeApp } from "@firebase/app";
 import { getFirestore } from "@firebase/firestore";
 import { getStorage } from "@firebase/storage";
-import {
-  getAuth,
-  initializeAuth,
-  getReactNativePersistence,
-} from "@firebase/auth";
+import { getAuth, initializeAuth } from "@firebase/auth";
 
-const config = {
+const config: FirebaseConfig = {
   apiKey: "AIzaSyBNTcylkleqkKwu8M47Z1S7mo3J5zyI8lU",
   authDomain: "smarter-293ff.firebaseapp.com",
   projectId: "smarter-293ff",
@@ -21,18 +17,18 @@ const config = {
 const app = initializeApp(config);
 const db = getFirestore(app);
 const storage = getStorage(app);
-let auth;
+let auth: any = getAuth(app);
 
-try {
-  auth = initializeAuth(app, {
-    persistence: getReactNativePersistence(ReactNativeAsyncStorage),
-  });
-} catch (error: any) {
-  if (error.code === "auth/already-initialized") {
-    auth = getAuth(app);
-  } else {
-    throw error;
-  }
-}
+// try {
+//   auth = initializeAuth(app, {
+//     persistence: getReactNativePersistence(ReactNativeAsyncStorage),
+//   });
+// } catch (error: any) {
+//   if (error.code === "auth/already-initialized") {
+//     auth = getAuth(app);
+//   } else {
+//     throw error;
+//   }
+// }
 
 export { app, db, auth, storage };

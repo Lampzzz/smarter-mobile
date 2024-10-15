@@ -6,19 +6,18 @@ import { View, TouchableOpacity, Text } from "react-native";
 import Container from "@/components/ui/Container";
 import HeaderBack from "@/components/ui/HeaderBack";
 import ContentHeader from "@/components/ui/ContentHeader";
-import TermsAndPrivacy from "@/components/ui/TermsAndPrivacy";
 import Button from "@/components/ui/Button";
 import { useUserFormStore } from "@/store/userStore";
 
 const Gender = () => {
   const { setUser } = useUserFormStore();
-  const options = ["Man", "Woman", "Other"];
+  const options = ["Male", "Female", "Other"];
 
   const {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm({ defaultValues: { gender: "Man" } });
+  } = useForm({ defaultValues: { gender: "Male" } });
 
   const onSubmit = (data: { gender: string }) => {
     if (!data) return;
@@ -61,7 +60,6 @@ const Gender = () => {
           )}
         </View>
         <View className="items-center">
-          <TermsAndPrivacy />
           <Button label="Next" handlePress={handleSubmit(onSubmit)} />
         </View>
       </View>
